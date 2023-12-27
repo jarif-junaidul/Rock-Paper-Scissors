@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1> Rock Paper Scissors</h1>
+
+    <button onclick="playGame('rock')">Rock</button>
+    <button onclick="playGame('paper')">Paper</button>
+    <button onclick="playGame('scissors')">Scissors</button>
+
+    <script>
+        function playGame(playerMove){
+            let computerMove;
+            let checkerValue = Math.random();
+            
+            if(checkerValue <= 0.33333){
+                computerMove = 'rock';
+            }else if(checkerValue > 0.33333 && checkerValue <= 0.66666){
+                computerMove = 'paper';
+            }else{
+                computerMove = 'scissors';
+            }
+
+            if(playerMove === computerMove){
+                alert(`Draw [${playerMove},${computerMove}]`);
+            }else if(
+                (playerMove === 'rock' && computerMove === 'scissors') ||
+                (playerMove === 'paper' && computerMove === 'rock') ||
+                (playerMove === 'scissors' && computerMove === 'paper')
+            ){
+                alert(`You win [${playerMove},${computerMove}]`);
+            }else{
+                alert(`You lose [${playerMove},${computerMove}]`);
+            }
+
+        }
+    </script>
+    </center>
+</body>
+</html>
