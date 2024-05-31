@@ -1,1 +1,0 @@
-Download the .html file then double click it.
